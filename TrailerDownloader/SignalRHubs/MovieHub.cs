@@ -251,7 +251,7 @@ namespace TrailerDownloader.SignalRHubs
             if (id != null)
             {
                 HttpClient httpClient = _httpClientFactory.CreateClient();
-                string uri = $"https://api.themoviedb.org/3/movie/{id}/videos?api_key={_apiKey}&language=en-US";
+                string uri = $"https://api.themoviedb.org/3/movie/{id}/videos?api_key={_apiKey}&language={_trailerLanguage}";
 
                 HttpResponseMessage response = await httpClient.GetAsync(new Uri(uri));
                 if (response.IsSuccessStatusCode)
